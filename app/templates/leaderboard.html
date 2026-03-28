@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Leaderboard (Lower Brier is Better)</h2>
+  <table>
+    <thead><tr><th>Participant</th><th>Source</th><th>Mean Brier</th><th>N</th></tr></thead>
+    <tbody>
+    {% for row in leaderboard %}
+      <tr><td>{{ row.participant }}</td><td>{{ row.source_type }}</td><td>{{ row.mean_brier }}</td><td>{{ row.n }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+<section class="card">
+  <h2>Calibration</h2>
+  <table>
+    <thead><tr><th>Bin</th><th>Pred Mean</th><th>Observed Rate</th><th>Count</th></tr></thead>
+    <tbody>
+    {% for c in calibration %}
+      <tr><td>{{ c.bin_lower }}-{{ c.bin_upper }}</td><td>{{ c.predicted_mean }}</td><td>{{ c.observed_rate }}</td><td>{{ c.count }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

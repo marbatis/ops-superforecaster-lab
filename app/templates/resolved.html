@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Resolved Questions</h2>
+  <ul>
+  {% for q in questions %}
+    <li>{{ q.question_id }} - {{ q.question_text }}</li>
+  {% endfor %}
+  </ul>
+</section>
+{% endblock %}

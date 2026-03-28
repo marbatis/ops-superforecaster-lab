@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Active Questions</h2>
+  <ul>
+  {% for q in questions %}
+    <li>{{ q.question_id }} - {{ q.question_text }} (deadline: {{ q.deadline }})</li>
+  {% endfor %}
+  </ul>
+  <p>Submit forecasts via API: `POST /api/questions/{question_id}/forecast`.</p>
+</section>
+{% endblock %}
