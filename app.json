@@ -1,0 +1,15 @@
+{
+  "name": "ops-superforecaster-lab",
+  "description": "Operational forecasting lab with Brier scoring, calibration, and leaderboard views.",
+  "repository": "https://github.com/marbatis/ops-superforecaster-lab",
+  "keywords": ["python","demo","heroku"],
+  "env": {
+    "PYTHONUNBUFFERED": {"description": "Disable Python output buffering", "value": "1"}
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  }
+}
